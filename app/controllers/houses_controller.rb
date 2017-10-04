@@ -5,13 +5,16 @@ class HousesController < OpenReadController
   before_action :set_house, only: [:show, :update, :destroy]
 
   # GET /houses
+  # shows all houses
   def index
-    @houses = House.all
+    # @houses = House.all
+    @house = current_user.houses
 
     render json: @houses
   end
 
   # GET /houses/1
+  # get one house
   def show
     render json: @house
   end
@@ -30,8 +33,9 @@ class HousesController < OpenReadController
 
   # PATCH/PUT /houses/1
   def update
+    @house = current_user.houses.find(params[:id])
     if @house.update(house_params)
-      render json: @house
+      # render json: @house
     else
       render json: @house.errors, status: :unprocessable_entity
     end
@@ -39,13 +43,15 @@ class HousesController < OpenReadController
 
   # DELETE /houses/1
   def destroy
+    @house = current_user.houses.find(params[:id])
     @house.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_house
-      @house = House.find(params[:id])
+      @house = current_user.houses.find(params[:id])
+      #House.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -28,15 +28,17 @@ class ExpensesController < OpenReadController
 
   # PATCH/PUT /expenses/1
   def update
-    if @expense.update(expense_params)
-      render json: @expense
+    @expenses = current_user.expenses.find(params[:id])
+      if @expense.update(expense_params)
+      # render json: @expense
     else
       render json: @expense.errors, status: :unprocessable_entity
-    end
+  end
   end
 
   # DELETE /expenses/1
   def destroy
+    @expenses = current_user.expenses.find(params[:id])
     @expense.destroy
   end
 
