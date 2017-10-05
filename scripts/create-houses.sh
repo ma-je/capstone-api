@@ -6,7 +6,9 @@ URL_PATH="/houses"
   ADDRESS1="23"
   ADDRESS2="apt b"
   STREET="left street"
-  CITY=
+  CITY="prov"
+  STATE="RI"
+  ZIPCODE="02909"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \

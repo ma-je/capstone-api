@@ -28,7 +28,6 @@ class ExpensesController < OpenReadController
 
   # PATCH/PUT /expenses/1
   def update
-    binding.pry
     @expense = current_user.expenses.find(params[:id])
     if @expense.update(expense_params)
       render json: @expense

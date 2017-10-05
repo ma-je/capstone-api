@@ -6,8 +6,7 @@ URL_PATH="/expenses"
 KIND="1"
 DUEDATE="2017-10-03"
 AMOUNT="1654.15"
-HOUSE_ID="3"
-# TOKEN="BAhJIiU2NzI0YzJlYmIwNmJkOTY2MmM4NmRiZDRkNWZkMDYzNQY6BkVG--82ea992355015918908fc2de86adcdc749098baa"
+HOUSE_ID="8"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \

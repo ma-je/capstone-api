@@ -1,9 +1,10 @@
 #!/bin/bash
 
 API="${API_ORIGIN:-http://localhost:4741}"
-# remember to come back and put in the heroku link
+# remember to come back and put in the heroku link\
+ID=9
 URL_PATH="/expenses"
-curl "${API}${URL_PATH}/${HOUSE_ID}" \
+curl "${API}${URL_PATH}/${ID}" \
   --include \
   --request DELETE \
   --header "Authorization: Token token=${TOKEN}" \
