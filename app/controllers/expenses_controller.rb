@@ -1,17 +1,19 @@
 # frozen_string_literal: true
 
-class ExpensesController < OpenReadController
-  before_action :set_expense, only: [:show, :update, :destroy]
+class ExpensesController < ProtectedController
+  before_action :set_expense, only: [:update, :destroy]
+  before_action :set_user_expenses, only: [:show]
 
   # GET /expenses
   def index
-    @expenses = Expense.all
-
+    #@expenses = Expense.all #edit to only show expenses of currently logged in user
+    @expenses = Expense.where(:user_id => ["user_id = ? ", current_user.id])
     render json: @expenses
   end
 
   # GET /expenses/1
   def show
+    @expense = current_user.expenses.find(params[:id])
     render json: @expense
   end
 
@@ -46,6 +48,10 @@ class ExpensesController < OpenReadController
     # Use callbacks to share common setup or constraints between actions.
     def set_expense
       @expense = Expense.find(params[:id])
+    end
+
+    def set_user_expenses
+      @expense = Expense.where(:user_id => params[:user_id])
     end
 
     # Only allow a trusted parameter "white list" through.
