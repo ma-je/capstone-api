@@ -19,31 +19,36 @@ version of Rails 4, as well as track `master` branches for `rails-api` and
 ## Routes
 The routes include:
 
-  Prefix Verb   URI Pattern                    Controller#Action
-expenses GET    /expenses(.:format)            expenses#index
-         POST   /expenses(.:format)            expenses#create
- expense GET    /expenses/:id(.:format)        expenses#show
-         PATCH  /expenses/:id(.:format)        expenses#update
-         PUT    /expenses/:id(.:format)        expenses#update
-         DELETE /expenses/:id(.:format)        expenses#destroy
-  houses GET    /houses(.:format)              houses#index
-         POST   /houses(.:format)              houses#create
-   house GET    /houses/:id(.:format)          houses#show
-         PATCH  /houses/:id(.:format)          houses#update
-         PUT    /houses/:id(.:format)          houses#update
-         DELETE /houses/:id(.:format)          houses#destroy
-examples GET    /examples(.:format)            examples#index
-         POST   /examples(.:format)            examples#create
- example GET    /examples/:id(.:format)        examples#show
-         PATCH  /examples/:id(.:format)        examples#update
-         PUT    /examples/:id(.:format)        examples#update
-         DELETE /examples/:id(.:format)        examples#destroy
- sign_up POST   /sign-up(.:format)             users#signup
- sign_in POST   /sign-in(.:format)             users#signin
-         DELETE /sign-out/:id(.:format)        users#signout
-         PATCH  /change-password/:id(.:format) users#changepw
-   users GET    /users(.:format)               users#index
-    user GET    /users/:id(.:format)           users#show
+  Prefix Verb     URI Pattern                    Controller#Action
+
+expenses GET      /expenses(.:format)            expenses#index
+         POST     /expenses(.:format)            expenses#create
+ expense GET      /expenses/:id(.:format)        expenses#show
+         PATCH    /expenses/:id(.:format)        expenses#update
+         PUT      /expenses/:id(.:format)        expenses#update
+         DELETE   /expenses/:id(.:format)        expenses#destroy
+
+  houses GET      /houses(.:format)              houses#index
+         POST     /houses(.:format)              houses#create
+   house GET      /houses/:id(.:format)          houses#show
+         PATCH    /houses/:id(.:format)          houses#update
+         PUT      /houses/:id(.:format)          houses#update
+         DELETE   /houses/:id(.:format)          houses#destroy
+
+examples GET      /examples(.:format)            examples#index
+         POST     /examples(.:format)            examples#create
+ example GET      /examples/:id(.:format)        examples#show
+         PATCH    /examples/:id(.:format)        examples#update
+         PUT      /examples/:id(.:format)        examples#update
+         DELETE   /examples/:id(.:format)        examples#destroy
+
+ sign_up POST     /sign-up(.:format)             users#signup
+ sign_in POST     /sign-in(.:format)             users#signin
+         DELETE   /sign-out/:id(.:format)        users#signout
+         PATCH    /change-password/:id(.:format) users#changepw
+         
+   users GET      /users(.:format)               users#index
+    user GET      /users/:id(.:format)           users#show
 
 See the links to the app below.
 
