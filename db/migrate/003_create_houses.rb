@@ -6,7 +6,7 @@ class CreateHouses < ActiveRecord::Migration[5.0]
       t.string :street
       t.string :city
       t.string :state
-      t.integer :zipcode
+      t.string :zipcode
       t.references :user, index: true, foreign_key: true, null: false
 
       t.timestamps

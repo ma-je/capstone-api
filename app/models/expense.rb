@@ -2,7 +2,7 @@
 
 class Expense < ApplicationRecord
   belongs_to :user
-  # belongs_to :house
+  belongs_to :house
 
   KINDS = [
     'water',
