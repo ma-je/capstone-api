@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 4) do
     t.date     "dueDate"
     t.decimal  "amount",     precision: 8, scale: 2
     t.integer  "user_id",                            null: false
-    t.integer  "house_id",                           null: false
+    # t.integer  "house_id",                           null: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
-    t.index ["house_id"], name: "index_expenses_on_house_id", using: :btree
+    # t.index ["house_id"], name: "index_expenses_on_house_id", using: :btree
     t.index ["user_id"], name: "index_expenses_on_user_id", using: :btree
   end
 

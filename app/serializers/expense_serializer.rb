@@ -1,3 +1,3 @@
 class ExpenseSerializer < ActiveModel::Serializer
-  attributes :amount
+  attributes :id, :kind, :dueDate, :amount
 end
