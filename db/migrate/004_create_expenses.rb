@@ -3,7 +3,7 @@ class CreateExpenses < ActiveRecord::Migration[5.0]
     create_table :expenses do |t|
       t.integer :kind
       t.date :dueDate
-      t.decimal :amount, :precision => 8, :scale => 2
+      t.decimal :amount
       t.references :user, index: true, foreign_key: true, null: false
       t.references :house, index: true, foreign_key: true, null: false
 
